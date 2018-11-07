@@ -33,11 +33,11 @@ city = [fake.city() for f in range(0, len(matrix))]
 state = [fake.state() for f in range(0, len(matrix))]
 
 vertices = np.insert(vertices.astype('object'), 1, names, axis=1)
-vertices = np.insert(vertices, 1, itins, axis=1)
-vertices = np.insert(vertices, 1, eins, axis=1)
-vertices = np.insert(vertices, 1, street_address, axis=1)
-vertices = np.insert(vertices, 1, city, axis=1)
-vertices = np.insert(vertices, 1, state, axis=1)
+vertices = np.insert(vertices, 2, itins, axis=1)
+vertices = np.insert(vertices, 3, eins, axis=1)
+vertices = np.insert(vertices, 4, street_address, axis=1)
+vertices = np.insert(vertices, 5, city, axis=1)
+vertices = np.insert(vertices, 6, state, axis=1)
 vertices = np.insert(vertices, 0, np.array(["id", "name", "itin", "ein", "street_address", "city", "state"]), axis=0)
 vertex_file = source_file_name+"-nodes.csv"
 np.savetxt(vertex_file, vertices, delimiter=",", fmt="%s");
